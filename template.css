@@ -1,0 +1,53 @@
+article, aside, dialog, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+/* ブラウザが勝手につけるマージンの削除。* とする例もあるが、body だけで済むならそれでよし */
+body {
+ margin: 0;
+}
+
+/* フッター固定のためのレイアウト */
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+footer {
+	margin-top: auto;
+}
+
+/* 外観 */
+body {
+	font-family: sans-serif;
+	font-size: small;
+	background: #eee;
+/*	background-color: black; */
+}
+header {
+	text-align: center;
+	color: grey;
+	font-weight: bold;
+	background-color:lightgray;
+	padding:5px 10px;
+/*	border: 1px darkgreen dotted;	*/
+}
+footer {
+/*	border: 1px navy dashed; */
+ color: grey;
+	font-weight: bold;
+	background-color:lightgray;
+	text-align: right;
+	padding:5px 10px;
+}
+main {
+/* border: 1px red dashed; */
+ /* メインの中身はセンタリング。canvas は js 側でサイズを更新しているのでサイズは指定できない */
+	margin: 20px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+canvas {
+/*	width:640px; */
+/*	margin: 20px auto; */
+	box-shadow: 0 .5mm 2mm rgba(0,0,0,.3); /* ドロップシャドウ */
+}
