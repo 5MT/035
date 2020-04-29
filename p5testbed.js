@@ -1,5 +1,10 @@
+let capCam;
+
 function setup() {
  const cnvMain = createCanvas(640, 480);
+ capCam = createCapture(VIDEO);
+ capCam.hide();
+// createCapture(VIDEO);
  cnvMain.parent("mainArea");
  background(255, 255, 255);
 }
@@ -20,6 +25,11 @@ function draw() {
  //stroke(255);
  noStroke();
  ellipse(150, 250, 100, 75); // 円を描く
+
+ const iWidthCamImage = 300;
+ image(capCam, 300, 200, iWidthCamImage, iWidthCamImage*capCam.height/capCam.width);
+
+// Image(capture);
 
 
 
