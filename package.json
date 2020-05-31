@@ -1,0 +1,22 @@
+{
+  "name": "035",
+  "version": "1.0.0",
+  "description": "",
+  "main": "p5testbed.1.2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5MT/035.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5MT/035/issues"
+  },
+  "homepage": "https://github.com/5MT/035#readme",
+  "dependencies": {
+    "p5.serialserver": "0.0.29"
+  }
+}

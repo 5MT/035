@@ -32,33 +32,50 @@ function setup() {
 
 function draw() {
 // background(100, 100, 100); //R, G, B
- background(100); //Grayscale
+ background(200); //Grayscale
 
  //line(0, 50, 400,300);
  rectMode(CENTER);
- 
- // 青の縁の緑の四角形を描く
- fill(0, 255, 0);
- stroke(0,0,255);
- strokeWeight(50);
- rect(200, 150, 150, 150);
 
  // スイッチの箱を描く
  fill(160);
  noStroke();
  rect(200,310, 40,80);
 
+ // シリアルデータをデバッグ用に表示
+ fill(32);
+ text(latestData, 10, 20);
+
+ // 可変抵抗の値を表示する
+ angleMode(DEGREES);
+ let iAngleRectangleRotation = map(latestData.split(",")[1], 0, 1023, 0, 360);
+ fill(32);
+ text(iAngleRectangleRotation, 10, 50);
+ // 青の縁の緑の四角形を描く
+ fill(200);
+ stroke(160);
+ strokeWeight(10);
+ push();              // 原点を一旦保存
+ translate(200, 150); // 原点を開店する中心に移動
+// rect(200, 150, 150, 150);
+ rotate(iAngleRectangleRotation);
+ rect(0, 0, 100, 100);
+ pop();               // 原点を 0,0 に戻す
+
  const iWidthCamImage = 300;
- if (latestData == 0) {
+ // if (latestData == 0) {
+ if (latestData.split(",")[0] == 0) {
  }else{
  // キャプチャを表示する
- image(capCam, 300, 200, iWidthCamImage, iWidthCamImage*capCam.height/capCam.width);
+ image(capCam, 300, 150, iWidthCamImage, iWidthCamImage*capCam.height/capCam.width);
  }
 
  // スイッチのトグルを描く
- fill(64, 175);            // 色を変える
+// fill(255,0,0, 175);            // 色を変える
+ fill(200);            // 色を変える
  noStroke();
- ellipse(200,310-(latestData-0.5)*40, 40,40);
+// ellipse(200,310-(latestData-0.5)*40, 40,40);
+ ellipse(200,310-(latestData.split(",")[0]-0.5)*40, 40,40);
 // ellipse(200,310, 40,40);
 
 
